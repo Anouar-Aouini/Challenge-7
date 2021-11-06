@@ -1,0 +1,14 @@
+<div class="row container" >
+  <div class="col-sm-4 mb-4"*ngFor="let todo of listUsers">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{todo.name}}</h5>
+        <p class="card-text">{{todo.email}}</p>
+        <a href="#" class="btn btn-primary">Click</a>
+      </div>
+    </div>
+  </div>
+</div>
+<h3>{{"Number of users with the name = " + searchedName + message}}</h3>
+<input type="text" class="form-control" #searched>
+<button class="btn btn-secondary" (click)="onSearch(searched)">Verify</button>
