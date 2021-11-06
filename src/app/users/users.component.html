@@ -1,14 +1,42 @@
 <div class="row container" >
-  <div class="col-sm-4 mb-4"*ngFor="let todo of listUsers">
+  <div class="col-sm-4 mb-4"*ngFor="let user of listUsers">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">{{todo.name}}</h5>
-        <p class="card-text">{{todo.email}}</p>
-        <a href="#" class="btn btn-primary">Click</a>
+        <h5 class="card-title">{{user.name}}</h5>
+        <p class="card-text">{{user.email}}</p>
+        <button class="btn btn-primary">Click</button>
       </div>
     </div>
   </div>
 </div>
-<h3>{{"Number of users with the name = " + searchedName + message}}</h3>
+<h3 *ngIf="searchedName">{{"Number of users with the name = " + searchedName + " is " + message}}</h3>
 <input type="text" class="form-control" #searched>
 <button class="btn btn-secondary" (click)="onSearch(searched)">Verify</button>
+
+<h2>Exercice 2 :</h2>
+
+<div class="row container" >
+  <h1>List of users</h1>
+  <div class="col-sm-4 mb-4"*ngFor="let user of userList">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{user.name}}</h5>
+        <p class="card-text">{{user.username}}</p>
+        <button class="btn btn-primary" (click)="displayTodos(user.id)">Voir todo </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="show">
+<button class="btn btn-secondary col-sm-2"
+(click)="allUsers()"
+>Back</button>
+<h1>List of todos for {{user?.name}}</h1>
+  <div class="col-sm-4 mb-4"*ngFor="let todo of userTodos">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{todo.id}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{todo.title}}</h6>  </div>
+</div>
+</div>
+</div>

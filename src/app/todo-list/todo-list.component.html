@@ -4,11 +4,11 @@
       <div class="card-body">
         <h5 class="card-title">{{todo.id}}</h5>
         <p class="card-text">{{todo.title}}</p>
-        <a href="#" class="btn btn-primary">Click</a>
+        <button class="btn btn-primary">Click</button>
       </div>
     </div>
   </div>
 </div>
-<h1>{{"Number of completed todos" + message}}</h1>
+<h1>{{message}}</h1>
 <button class="btn btn-success" (click)="onComplete()">Bilan</button>
-<h1>{{msg}}</h1>
+<h1>{{"Number of completed todos is equal to " + msg}}</h1>

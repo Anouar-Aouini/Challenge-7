@@ -8,11 +8,11 @@ export class CalculService {
   constructor() { }
 
   getNumberOf(list: any[], critiria: string, value: any) {
-    return `Nomber of elements where ${critiria} is equal to ${value} = ${list.filter(el=>el[critiria]===value).length}`
+    return `Number of todos where ${critiria} = ${value} is equal to ${list.filter(el=>el[critiria]===value).length}`
   }
 
   getCompletedList(list: any[], critiria: string, value: any) {
-    return ` = ${list.filter(el=>el[critiria]===value).length}/${list.length}`
+    return `${list.filter(el=>el[critiria]===value).length} out of ${list.length}`
    }
 
 }
